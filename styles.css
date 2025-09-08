@@ -1,4 +1,0 @@
-body { font-family: Arial; }
-#results { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
-.movie { border: 1px solid #ccc; padding: 10px; }
-.movie img { width: 100%; }
