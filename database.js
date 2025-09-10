@@ -12,6 +12,12 @@ db.serialize(() => {
         poster_url TEXT
     )`);
 
+    db.run(`CREATE TABLE IF NOT EXISTS favorites (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        movie_id INTEGER UNIQUE,
+        FOREIGN KEY(movie_id) REFERENCES movies(id)
+    )`);
+
     // Insert data awal
     const stmt = db.prepare(`INSERT OR IGNORE INTO movies (title, year, genre, rating, overview, poster_url) VALUES (?, ?, ?, ?, ?, ?)`);
     const movies = [
@@ -21,6 +27,7 @@ db.serialize(() => {
     ];
     movies.forEach(movie => stmt.run(movie));
     stmt.finalize();
+    console.log('Database initialized');
 });
 
 module.exports = db;

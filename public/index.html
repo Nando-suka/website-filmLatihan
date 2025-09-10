@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pencarian Film</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Pencarian Film</h1>
     <input type="text" id="searchInput" placeholder="Cari film...">
-    <button onclick="searchMovies()">Cari</button>
-    <div id="results"></div>
+    <button id="searchBtn">Cari</button>
+    <button id="favoritesBtn">Lihat Favorit</button>
+    <div id="results" aria-live="polite"></div>
     <script src="script.js"></script>
 </body>
 </html>

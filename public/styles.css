@@ -1,4 +1,30 @@
 body { font-family: Arial; }
 #results { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
 .movie { border: 1px solid #ccc; padding: 10px; }
-.movie img { width: 100%; }
+.movie img { width: 100%; cursor: pointer; }
+.movie-detail { max-width: 600px; margin: 0 auto; text-align: center; }
+.movie-detail img { max-width: 300px; }
+
+/* Skeleton loading */
+.skeleton {
+    background: linear-gradient(90deg, #eee 25%, #f5f5f5 37%, #eee 63%);
+    background-size: 400% 100%;
+    animation: shimmer 1.2s ease-in-out infinite;
+}
+@keyframes shimmer {
+    0% { background-position: 100% 0; }
+    100% { background-position: 0 0; }
+}
+.movie.skeleton-card { border-color: #e5e5e5; }
+.skeleton-thumb { width: 100%; aspect-ratio: 2/3; display: block; }
+.skeleton-line { height: 10px; margin-top: 8px; border-radius: 4px; }
+
+/* Error message */
+.error-box {
+    grid-column: 1 / -1;
+    padding: 12px;
+    border: 1px solid #f5c2c7;
+    background: #f8d7da;
+    color: #842029;
+    border-radius: 6px;
+}
